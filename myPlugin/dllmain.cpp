@@ -1,0 +1,29 @@
+
+/*
+author : wangchen
+*/
+
+#include "stdafx.h"
+
+#ifdef _WIN32
+BOOL APIENTRY DllMain( HMODULE hModule,
+					  DWORD  ul_reason_for_call,
+					  LPVOID lpReserved
+					  )
+{
+	switch (ul_reason_for_call)
+	{
+	case DLL_PROCESS_ATTACH:		
+		// 需要调试dll，可以在这里加入这段代码，然后给自己的模块下断点
+		//MessageBox(NULL, L"dd", L"dd", MB_OK);
+		break;
+	case DLL_THREAD_ATTACH:		
+	case DLL_THREAD_DETACH:
+	case DLL_PROCESS_DETACH:
+		break;
+	}
+	return TRUE;
+}
+#endif
+
+
